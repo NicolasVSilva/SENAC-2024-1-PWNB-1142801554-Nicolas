@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskWave</title>
+    <link rel="stylesheet" href="src/styles/reset.css">
+    <link rel="stylesheet" href="src/styles/style.css">
+    <link rel="stylesheet" href="src/styles/modal.css">
+    <script src="src/js/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div>
+            <h3>TaskWave</h3>
+        </div>
+        <nav>
+            <p><a href="#sec01">Home</a></p>
+            <p><a id="btnNavEquipe" href="#sec02">Equipes</a></p>
+            <p><a id="btnNavAtividade" href="#sec03">Atividades</a></p>
+            <!-- <p><a id="btnNavAnotacao" href="#sec04">Anotações</a></p> -->
+            <p><a id="btnNavRelatori" href="#sec05">Relatorios</a></p>
+        </nav>
+    </header>
+    <main>
+        <section class="secoes" id="sec01">
+            <section class="txt1">
+                <h1>Bem-vindo à TaskWave!</h1>
+                <p>Na TaskWave, nossa missão é transformar a gestão de projetos colaborativos, proporcionando uma
+                    plataforma
+                    inovadora que
+                    eleva a eficiência e o sucesso de suas iniciativas. Entendemos que, no mundo acelerado de hoje, a
+                    colaboração eficaz e a
+                    comunicação clara são fundamentais para o sucesso de qualquer projeto. É por isso que desenvolvemos
+                    uma
+                    solução completa(ou quase)
+                    e intuitiva que atende às necessidades de equipes dinâmicas e multifuncionais.</p>
+                <h3>O que a TaskWave oferece:</h3>
+                <ul>
+                    <li>Colaboração Facilitada: Nossa plataforma é projetada para unir equipes, independentemente de
+                        onde
+                        estejam. Com
+                        ferramentas que incentivam a colaboração em tempo real, garantimos que todos os membros da
+                        equipe
+                        estejam na mesma
+                        página, trabalhando juntos para alcançar objetivos comuns.</li>
+                    <li>Comunicação Melhorada: Diga adeus às barreiras de comunicação. Na TaskWave, oferecemos canais de
+                        comunicação integrados
+                        que permitem a troca de informações de maneira eficiente e organizada. Seja por meio de chats,
+                        comentários ou
+                        atualizações em tempo real, facilitamos a comunicação fluida entre todos os membros do projeto.
+                    </li>
+                    <li>Acompanhamento e Execução de Tarefas Otimizados: Com a TaskWave, acompanhar o progresso das
+                        tarefas
+                        nunca foi tão fácil.
+                        Nossa plataforma oferece uma visão clara e detalhada de todas as atividades, prazos e
+                        responsáveis,
+                        permitindo uma
+                        gestão de tarefas eficiente e proativa.</li>
+                    <li>Relatórios e Análises de Desempenho: Obtenha insights valiosos sobre o desempenho do seu projeto
+                        com
+                        nossos relatórios
+                        detalhados e análises avançadas. Identifique pontos fortes e áreas de melhoria, tome decisões
+                        informadas e impulsione o
+                        sucesso do seu projeto com dados precisos e atualizados.</li>
+                </ul>
+                <p>Na TaskWave, estamos comprometidos em fornecer uma plataforma que não apenas simplifique a gestão de
+                    projetos, mas
+                    também impulsione a colaboração e a inovação. Acreditamos que, com as ferramentas certas, todas as
+                    equipes têm o
+                    potencial de alcançar resultados extraordinários.</p>
+                <p><b>Vamos surfar a onda do sucesso juntos!</b></p>
+            </section>
+            <section class="button">
+                <button type="button" id="btnCadEquipe">Criar nova Equipe</button>
+                <button type="button" id="btnCadTarefa">Criar nova Tarefa</button>
+                <button type="button" id="btnCadFuncionario">Registrar Funcionario</button>
+                <button type="button" id="btnCadEmpresa">Registrar Empresa</button>
+            </section>
+            <section class="txt1">
+                <p>Para que tudo funcione nos conformes, deve-se seguir a seguinte ordem:</p>
+                <ol>
+                    <li>Devemos começar registrando a Empresa, para futuramente utilizarmos os dados em outros
+                        cadastros.(caso a empresa já esteja cadastrada siga o proximo passo)</li>
+                    <li>Em seguida inserimos os funcionarios, não nescessariamente todos, aqueles que serão inseridos
+                        ficam
+                        por decisão da empresa.</li>
+                    <li>Chegou a hora de cadastrar as equipes, utilizando os dados das empresas cadastradas e dos
+                        funcionarios incluidos, podemos montar diversas equipes, e um unico funcionario pode estar em
+                        diferentes equipes ao mesmo tempo.</li>
+                    <li>Por ultimo cadastramos as atividades e designamos as respectivas equipes para seu
+                        desenvolvimento.
+                    </li>
+                </ol>
+            </section>
+        </section>
+        <section class="secoes" id="sec02">
+            <section class="Buscar">
+                <h3>Lista de Equipes:</h3>
+                <form class="box">
+                    <select name="Empresa" id="bscEmpresa">
+                    </select>
+                </form>
+                <button type="button" id="BuscaEquipe">Buscar</button>
+            </section>
+            <section class="lst" id="listaEquipes">
+            </section>
+        </section>
+        <section class="secoes" id="sec03">
+            <section class="Buscar">
+                <h3>Lista de Atividades:</h3>
+                <form class="box">
+                    <select name="Equipe" id="bscEquipesAt">
+                        <option value="0">Buscar por equipes</option>
+                    </select>
+                </form>
+                <button type="button" id="BuscaAtividade">Buscar</button>
+            </section>
+            <section class="lst" id="listaAtividades">
+            </section>
+        </section>
+       <!--  <section class="secoes" id="sec04">
+            <section class="Buscar">
+                <h3>Lista de Anotações:</h3>
+                <form class="box">
+                    <select name="Equipe" id="bscEquipesAn">
+                        <option value="0">Buscar equipes</option>
+                    </select>
+                    <select name="Tarefa" id="bscTarefasAn">
+                        <option value="0">Buscar tarefas</option>
+                    </select>
+                </form>
+                <button type="button" id="BuscaAnotacao">Buscar</button>
+            </section>
+            <section class="lst" id="listaAnotações">
+            </section>
+        </section> -->
+        <section class="secoes" id="sec05">
+            <section class="Buscar">
+                <h3>Relatorio:</h3>
+                <form class="box">
+                    <select name="Equipe" id="bscEquipesRe">
+                        <option value="0">Buscar equipes</option>
+                    </select>
+                    <select name="Tarefa" id="bscTarefasRe">
+                        <option value="0">Buscar tarefas</option>
+                    </select>
+                </form>
+                <button type="button" id="BuscaRelatorio">Buscar</button>
+            </section>
+            <section class="lstt" id="listaRelatorio">
+            </section>
+        </section>
+    </main>
+
+    <!-- O Modal Registrar Empresa-->
+    <div id="modalEmpresa" class="modal">
+        <!-- Conteúdo do Modal -->
+        <div class="modal-content" id="modalContentEmpresa">
+            <span class="close" id="closeEmpresa">&times;</span>
+            <form>
+                <label for="modalCompanyName">Nome da Empresa:</label>
+                <input type="text" id="modalCompanyName" name="companyName"><br><br>
+
+                <label for="modalCnpj">CNPJ:</label>
+                <input type="text" id="modalCnpj" name="cnpj" maxlength="18" placeholder="00.000.000/0000-00"><br><br>
+
+                <button type="button" class="save" id="saveEmpresa">Salvar</button>
+                <button type="button" class="cancel" id="cancelEmpresa">Cancelar</button>
+            </form>
+            <div class="added-items" id="addEmpresa"></div>
+        </div>
+    </div>
+
+    <!-- O Modal Registra funcionario -->
+    <div id="modalFuncionario" class="modal">
+        <!-- Conteúdo do Modal -->
+        <div class="modal-content" id="modalContentFuncionario">
+            <span class="close" id="closeFuncionario">&times;</span>
+            <form>
+                <label for="modalEmployeeName">Nome do Funcionário:</label>
+                <input type="text" id="modalEmployeeName" name="employeeName"><br><br>
+
+                <label for="modalCpf">CPF:</label>
+                <input type="text" id="modalCpf" name="cpf" maxlength="14" placeholder="000.000.000-00"><br><br>
+
+                <label for="modalCompany">Empresas:</label>
+                <select id="modalCompany" name="company">
+                    <option placeholder="Selecione uma empresa" value="empresa1"></option>
+                </select><br><br>
+
+                <button type="button" class="save" id="saveFuncionario">Salvar</button>
+                <button type="button" class="cancel" id="cancelFuncionario">Cancelar</button>
+            </form>
+            <div class="added-items" id="addFuncionario"></div>
+        </div>
+    </div>
+
+    <!-- O Modal Registra Tarefa -->
+    <div id="modalTarefa" class="modal">
+        <!-- Conteúdo do Modal -->
+        <div class="modal-content" id="modalcontentTarefa">
+            <span class="close" id="closeTarefa">&times;</span>
+            <form>
+                <label for="taskName">Nome da Tarefa:</label>
+                <input type="text" id="taskName" name="taskName"><br><br>
+
+                <label for="company">Empresa:</label>
+                <select id="company" name="company">
+                    <option value="empresa1"></option>
+                </select><br><br>
+
+                <label for="team">Equipe:</label>
+                <select id="team" name="team">
+                    <option value="equipe1">Equipe 1</option>
+                </select><br><br>
+
+                <label for="description">Descrição:</label>
+                <textarea id="description" name="description" rows="4" cols="50"></textarea><br><br>
+
+                <button type="button" class="save" id="saveTarefa">Salvar</button>
+                <button type="button" class="cancel" id="cancelTarefa">Cancelar</button>
+            </form>
+            <div class="added-items" id="addTarefa"></div>
+        </div>
+    </div>
+
+    <!-- O Modal Registra Equipe -->
+    <div id="modalEquipe" class="modal">
+        <!-- Conteúdo do Modal -->
+        <div class="modal-content" id="modalContentEquipe">
+            <span class="close" id="closeEquipe">&times;</span>
+            <form>
+                <label for="modalTeam">Nome da Equipe:</label>
+                <input type="text" id="modalTeam" name="team"><br><br>
+
+                <label for="modalCompanyEq">Empresa:</label>
+                <select id="modalCompanyEq" name="company">
+                    <option value="empresa1"></option>
+                </select><br><br>
+
+                <label for="modalEmployees">Funcionários:</label>
+                <select id="modalEmployees" name="employees">
+                    <option value="funcionario1"></option>
+                </select>
+                <div class="divAdd">
+                    <div id="addEqFunc"></div>
+                    <button type="button" class="add" id="addFunquipe">Add</button><br><br>
+                </div>
+
+                <button type="button" class="save" id="saveEquipe">Salvar</button>
+                <button type="button" class="cancel" id="cancelEquipe">Cancelar</button>
+            </form>
+            <div class="added-items" id="addEquipe"></div>
+        </div>
+
+    </div>
+</body>
+
+</html>
